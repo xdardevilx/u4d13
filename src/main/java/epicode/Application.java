@@ -49,6 +49,7 @@ public class Application {
                 faker.number().numberBetween(0, 5),
                 faker.number().numberBetween(0, 2)
         );
+        eventsDAO.save(partita);
 
         for (int i = 0; i < 20; i++) {
             eventsDAO.save(new Event(
@@ -78,7 +79,7 @@ public class Application {
         // ******************** CASCADING ************************
 
         // Eliminando un evento dovrebbe eliminare anche le partecipazioni ad esso collegate
-        eventsDAO.findByIdAndDelete(24);
+//        eventsDAO.findByIdAndDelete(2);
 
 
         em.close();
